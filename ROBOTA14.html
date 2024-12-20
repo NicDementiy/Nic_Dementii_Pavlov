@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +7,24 @@
     <link rel="stylesheet" href="ROBOTA1CSS.css">
     <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
     <script src="../burger.menu.js"></script>
+    <style>
+        #square {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
-       <header>
+    <header>
         <div id="snow"></div>
         <div class="header_style">
-                <div class="logo">
-                    <img src="img/name.png" class="ava">
-                    <p class="name">Pavlov Dementii</p>
+            <div class="logo">
+                <img src="img/name.png" class="ava">
+                <p class="name">Pavlov Dementii</p>
             </div>
             <div class="menu_item">
                 <ul>
@@ -25,7 +33,6 @@
                             <i class="fa-solid fa-house"></i> Home
                         </a>
                     </li>
-
                 </ul>
             </div>
             <div class="burger">
@@ -34,27 +41,24 @@
         </div>
     </header>
     <p class="main_name">Натисніть і побачите магію</p>
-    <img id="snitch" src="img/name.png" alt="">
+    <div id="square"></div>
     <div class="arrows">
         <a href="ROBOTA13.html"><i class="fa-solid fa-arrow-left"></i></a>
-  
         <a href="ROBOTA15.html"><i class="fa-solid fa-arrow-right"></i></a>
     </div>
     <script>
-        snitch.onclick = function(){
-            let start = Date.now()
-            let opts = {
-                duration: 3000
-            }
-   
-            let timer = setInterval(function(){
-              
+        const square = document.getElementById("square");
+        square.onclick = function () {
+            let start = Date.now();
+
+            let timer = setInterval(function () {
                 let timePassed = Date.now() - start;
-                snitch.style.left = timePassed/5 + 'px';
-                if(timePassed >3000)
-                clearInterval(timer);
-            },20)
-        }
+                square.style.left = timePassed / 5 + 'px';
+                if (timePassed > 3000) {
+                    clearInterval(timer);
+                }
+            }, 20);
+        };
     </script>
 </body>
 </html>
